@@ -10,6 +10,8 @@ html, body {
 
   margin: 20px 0;
     background-color: white;
+
+    overflow-x: hidden;
 }
 
 .grid{
@@ -19,18 +21,15 @@ html, body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    padding: 0 10px;
     
 }
 
 .card{
     margin : 5px;
     position: relative;
-    /* background-color:  dodgerblue;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center; */
-    height: 150px;
-    width: 150px;
+    height: clamp(70px, 22vw, 150px);
+    width: clamp(70px, 22vw, 150px);
 
     transition: all 0.4s linear;
 
@@ -41,8 +40,8 @@ html, body {
 .card,
 .back,
 .front{
-    height: 150px;
-    width: 150px;
+    height: clamp(70px, 22vw, 150px);
+    width: clamp(70px, 22vw, 150px);
 }
 
 .back,
@@ -78,9 +77,6 @@ html, body {
     /* visibility: hidden; */
 }
 
-/* ---------- New stuff below ---------- */
-
-/* Stats bar above the grid: timer, moves, score, restart button */
 .stats{
     max-width: 960px;
     margin: 0 auto 20px auto;
@@ -124,7 +120,7 @@ html, body {
     background-color: #1c7ed6;
 }
 
-/* Once a card is matched, it shouldn't react to hover/clicks visually */
+
 .match{
     cursor: default;
 }
@@ -177,4 +173,49 @@ html, body {
 
 .win-box button:hover{
     background-color: #1c7ed6;
+}
+
+
+@media (max-width: 768px){
+    .stats{
+        gap: 18px;
+    }
+
+    .stat-value{
+        font-size: 18px;
+    }
+}
+
+/* Phones */
+@media (max-width: 480px){
+    .stats{
+        gap: 10px;
+        flex-wrap: wrap;
+        row-gap: 8px;
+    }
+
+    .stat-label{
+        font-size: 10px;
+    }
+
+    .stat-value{
+        font-size: 16px;
+    }
+
+    #restart{
+        padding: 6px 14px;
+        font-size: 13px;
+    }
+    .win-box{
+        padding: 30px 20px;
+        max-width: 90vw;
+    }
+
+    .win-box h2{
+        font-size: 22px;
+    }
+
+    .win-box p{
+        font-size: 14px;
+    }
 }
