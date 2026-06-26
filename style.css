@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+
+  margin: 20px 0;
+    background-color: white;
+}
+
+.grid{
+    max-width: 960px;
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+
+.card{
+    margin : 5px;
+    position: relative;
+    /* background-color:  dodgerblue;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center; */
+    height: 150px;
+    width: 150px;
+
+    transition: all 0.4s linear;
+
+    transform-style: preserve-3d;
+
+}
+
+.card,
+.back,
+.front{
+    height: 150px;
+    width: 150px;
+}
+
+.back,
+.front{
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front{
+    background: url('./img/question.gif');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+.back{    
+    transform: rotateY(180deg);
+    /* background-color:  dodgerblue; */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.selected{
+    border: 4px solid red;
+    transform: rotateY(180deg);
+}
+
+.match .front{
+    border: 4px solid black;
+    background-image: none !important;
+
+    /* visibility: hidden; */
+}
+
+/* ---------- New stuff below ---------- */
+
+/* Stats bar above the grid: timer, moves, score, restart button */
+.stats{
+    max-width: 960px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.stat{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-label{
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #888;
+    letter-spacing: 1px;
+}
+
+.stat-value{
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+}
+
+#restart{
+    padding: 8px 18px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: dodgerblue;
+    color: white;
+    cursor: pointer;
+}
+
+#restart:hover{
+    background-color: #1c7ed6;
+}
+
+/* Once a card is matched, it shouldn't react to hover/clicks visually */
+.match{
+    cursor: default;
+}
+
+/* Win overlay */
+#win-message{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#win-message.hidden{
+    display: none;
+}
+
+.win-box{
+    background-color: white;
+    padding: 40px 60px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.win-box h2{
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+.win-box p{
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+.win-box button{
+    padding: 10px 24px;
+    font-size: 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: dodgerblue;
+    color: white;
+    cursor: pointer;
+}
+
+.win-box button:hover{
+    background-color: #1c7ed6;
+}
