@@ -62,10 +62,7 @@ const cardsArray = [
         img : './img/thwomp.png'
     }
 
-
-
 ]
-
 
 
 const game = document.getElementById('game')
@@ -79,7 +76,7 @@ grid.setAttribute('class','grid')
 //append child in game div
 game.appendChild(grid)
 
-//----- New: grab the stat elements + win overlay -----
+
 const timerEl = document.getElementById('timer')
 const movesEl = document.getElementById('moves')
 const scoreEl = document.getElementById('score')
@@ -230,7 +227,7 @@ grid.addEventListener('click', function(event){
         return
     }
 
-   
+
     startTimer();
 
     if(count<2){
@@ -249,7 +246,7 @@ grid.addEventListener('click', function(event){
             
             clicked.parentNode.classList.add('selected')
 
-           
+            
             moves++;
             updateMoves();
         }
