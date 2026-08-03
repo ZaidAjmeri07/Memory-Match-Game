@@ -26,15 +26,7 @@ html, body {
 
 .card{
     position: relative;
-    /* background-color:  dodgerblue;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center; */
-
-    /* With CSS grid, width comes from the grid column (1fr), not a fixed value.
-       aspect-ratio: 1 keeps each card perfectly square at whatever width
-       the column ends up being. max-width caps it so cards don't get huge
-       on very wide screens. */
+   
     width: 100%;
     max-width: 150px;
     aspect-ratio: 1 / 1;
