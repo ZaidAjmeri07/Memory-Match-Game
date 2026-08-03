@@ -1,2 +1,3 @@
-# Memory Match Game
-A vanilla JavaScript memory matching game built to practice DOM manipulation and event handling.
+## Credits
+* **Author:** Ajmeri M Zaid
+* **Academic Session:** 2025-2026
